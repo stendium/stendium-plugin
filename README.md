@@ -31,7 +31,7 @@ cp -r stendium-plugin ~/.claude/skills/stendium
 Когда папка плагина опубликована как отдельный публичный git-репозиторий (в ней уже есть `.claude-plugin/marketplace.json`):
 
 ```text
-/plugin marketplace add <owner>/<repo>
+/plugin marketplace add stendium/stendium-plugin
 /plugin install stendium@stendium-plugins
 ```
 
