@@ -1,0 +1,12 @@
+{
+  "name": "stendium",
+  "displayName": "Стендиум",
+  "version": "0.1.0",
+  "description": "Публикация рабочих инструментов на Стендиум — витрину-портфолио инструментов. Скилл собирает машиночитаемую карточку из проекта автора (что это, под какие задачи, что принимает/отдаёт) и отправляет её на витрину по персональному токену.",
+  "author": {
+    "name": "Stendium",
+    "url": "https://stendium.ru"
+  },
+  "homepage": "https://stendium.ru",
+  "keywords": ["stendium", "publish", "portfolio", "vibecoding", "tools"]
+}

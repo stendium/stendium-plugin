@@ -1,0 +1,14 @@
+{
+  "name": "stendium-plugins",
+  "owner": {
+    "name": "Stendium"
+  },
+  "plugins": [
+    {
+      "name": "stendium",
+      "source": ".",
+      "description": "Публикация инструментов на Стендиум из Claude Code: /stendium-publish (собрать карточку из проекта и опубликовать) и /stendium-story (история сборки из git со скрабом секретов/ПДн).",
+      "version": "0.1.0"
+    }
+  ]
+}
