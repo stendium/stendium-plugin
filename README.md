@@ -117,7 +117,7 @@ stendium-plugin/
 
 ## Не только Claude Code
 
-Если вы работаете в Codex, Cursor или Gemini CLI — тот же функционал доступен через MCP-сервер Стендиума: [stendium-mcp](https://github.com/mixailimyc-boost/stendium-mcp). Инструменты `check_access` и `publish_tool`, тот же персональный токен.
+Если вы работаете в Codex, Cursor или Gemini CLI — тот же функционал доступен через MCP-сервер Стендиума: [stendium/stendium-mcp](https://github.com/stendium/stendium-mcp). Инструменты `check_access` и `publish_tool`, тот же персональный токен.
 
 ## Приватность
 
