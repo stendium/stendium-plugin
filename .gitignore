@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 *.log
+
+# DoC&CoD pilot logs
+.docicod/sessions/
+.docicod/snapshots/

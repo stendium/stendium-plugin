@@ -1,5 +1,6 @@
 {
   "name": "stendium-plugins",
+  "description": "Маркетплейс Стендиума для Claude Code — плагин публикации рабочих инструментов на витрину-портфолио stendium.ru.",
   "owner": {
     "name": "Stendium"
   },

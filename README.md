@@ -11,35 +11,40 @@
 
 ## Установка
 
-### Вариант 1 — локально (быстро, для беты)
+Нужен **Claude Code** (терминальный CLI или расширение в VS Code / Cursor) и **Node.js 18+**. Плагин ставится из собственного маркетплейса Стендиума — репозитория `stendium/stendium-plugin`. Два равнозначных пути.
 
-Скачайте/скопируйте папку `stendium-plugin` к себе и запустите Claude Code с ней:
+### Вариант 1 — через код (команды)
 
-```bash
-claude --plugin-dir /путь/к/stendium-plugin
-```
-
-Либо положите папку под свой каталог скиллов, чтобы она подхватывалась как плагин `stendium@skills-dir` при следующем запуске (папка уже содержит `.claude-plugin/plugin.json`):
+Две команды в Claude Code CLI:
 
 ```bash
-# пример: personal scope
-cp -r stendium-plugin ~/.claude/skills/stendium
+claude plugin marketplace add stendium/stendium-plugin   # 1) добавить маркетплейс
+claude plugin install stendium@stendium-plugins          # 2) поставить плагин
 ```
 
-### Вариант 2 — через marketplace (одной командой)
-
-Когда папка плагина опубликована как отдельный публичный git-репозиторий (в ней уже есть `.claude-plugin/marketplace.json`):
+Работает в терминале `claude`. Если пользуетесь только панелью Claude Code в VS Code и `claude` нет в PATH — тот же бинарь лежит внутри расширения:
 
 ```text
-/plugin marketplace add stendium/stendium-plugin
-/plugin install stendium@stendium-plugins
+Windows: %USERPROFILE%\.vscode\extensions\anthropic.claude-code-<версия>\resources\native-binary\claude.exe
 ```
 
-Проверить, что скиллы видны:
+### Вариант 2 — через UI (2 шага)
 
-```text
-/help              # в списке появятся stendium-publish и stendium-story
-/stendium-publish
+В панели Claude Code наберите `/plugins` — откроется менеджер плагинов. Затем:
+
+1. Вкладка **Marketplaces** → **Add** → вставьте `stendium/stendium-plugin`.
+2. Вкладка **Plugins** → `stendium` → **Install**.
+
+---
+
+После установки любым путём **перезапустите панель Claude Code** — подхватятся команды `/stendium-publish` и `/stendium-story`.
+
+> Команда `/plugin marketplace add …` одной строкой в панели VS Code **недоступна** («isn't available in this environment») — используйте GUI `/plugins` (Вариант 2) или команды CLI (Вариант 1).
+
+Проверить, что плагин встал:
+
+```bash
+claude plugin list        # в списке — stendium@stendium-plugins, ✔ enabled
 ```
 
 ## Настройка токена (один раз)
@@ -60,11 +65,7 @@ cp -r stendium-plugin ~/.claude/skills/stendium
    ```
 3. (Опционально) другой адрес API — `STENDIUM_BASE_URL` (по умолчанию `https://stendium.ru`).
 
-Проверить доступ:
-
-```bash
-node stendium-plugin/skills/stendium-publish/scripts/publish.mjs --check
-```
+Проверять токен вручную не нужно — скилл сам проверит доступ при первом запуске `/stendium-publish` и подскажет, если токен не задан.
 
 ## Использование
 
@@ -113,6 +114,10 @@ stendium-plugin/
 │           └── publish-story.mjs       # публикация как материал
 └── README.md
 ```
+
+## Не только Claude Code
+
+Если вы работаете в Codex, Cursor или Gemini CLI — тот же функционал доступен через MCP-сервер Стендиума: [stendium-mcp](https://github.com/mixailimyc-boost/stendium-mcp). Инструменты `check_access` и `publish_tool`, тот же персональный токен.
 
 ## Приватность
 
